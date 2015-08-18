@@ -24,7 +24,7 @@ RUN yum install -y \
   && yum clean all
 
 # Install Sonatype nexus 
-RUN mkdir -p /opt/sonatype \
+RUN mkdir -p /opt/sonatype/nexus \
   && curl --fail --silent --location --retry 3 \
     https://download.sonatype.com/nexus/oss/nexus-${NEXUS_VERSION}-bundle.tar.gz \
   | gunzip \
