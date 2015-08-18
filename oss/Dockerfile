@@ -28,7 +28,7 @@ RUN mkdir -p /opt/sonatype \
   && curl --fail --silent --location --retry 3 \
     https://download.sonatype.com/nexus/oss/nexus-${NEXUS_VERSION}-bundle.tar.gz \
   | gunzip \
-  | tar x -C /tmp nexus-${NEXUS_VERSION} \
+  | tar x -C /tmp nexus-${NEXUS_REVISION} \
   && mv /tmp/nexus-${NEXUS_REVISION}/* /opt/sonatype/nexus/ \
   && rm -rf /tmp/nexus-${NEXUS_REVISION}
 
