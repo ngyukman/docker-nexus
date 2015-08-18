@@ -18,9 +18,9 @@ RUN cd /var/tmp \
   && rpm -Ui jdk-${JAVA_VERSION}-linux-x64.rpm \
   && rm -rf jdk-${JAVA_VERSION}-linux-x64.rpm
 
-# Install base and nginx
+# Install base
 RUN yum install -y \
-  curl tar createrepo \
+  curl tar \
   && yum clean all
 
 # Install Sonatype nexus 
