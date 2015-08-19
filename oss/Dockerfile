@@ -34,6 +34,7 @@ RUN mkdir -p /opt/sonatype/nexus \
 
 # Add repository user
 RUN useradd -r -u 200 -m -c "nexus role account" -d ${SONATYPE_WORK} -s /bin/false nexus
+RUN chown -R 200 /opt/sonatype/nexus
 
 VOLUME ${SONATYPE_WORK}
 
@@ -44,5 +45,4 @@ ENV APPLICATION_PORT 8082
 ENV JAVA_MAX_MEM 768M
 ENV JAVA_MIN_MEM 256M
 ENV EXTRA_JAVA_OPTS -Dnexus-work=${SONATYPE_WORK} -Dapplication-port=${APPLICATION_PORT}
-CMD bin/start
-
+CMD bin/nexus console
